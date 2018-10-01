@@ -150,6 +150,11 @@ INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('S
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro colorear princesa',5,3,1,15);
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro colorear carros',5,3,1,15);
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro de crucigramas',5,3,1,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro de Harry Potter 1',5,3,1,30);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro de Harry Potter 2',5,3,1,30);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro de Harry Potter 3',5,3,1,30);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro de Harry Potter 4',5,3,1,30);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro de Harry Potter 5',5,3,1,30);
 
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Cepillo de dientes',8,4,1,25);
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paquete 2 cepillos de dientes',8,4,1.75,15);
