@@ -90,7 +90,6 @@ INSERT INTO categoria(nombre) VALUES('Productos Congelados');
 INSERT INTO categoria(nombre) VALUES('Utiles escolares');
 INSERT INTO categoria(nombre) VALUES('Productos de cocina');
 INSERT INTO categoria(nombre) VALUES('Productos Decorativos');
-INSERT INTO categoria(nombre) VALUES('Herramientas');
 
 INSERT INTO marca(nombreMarca) VALUES ('Hershey');
 INSERT INTO marca(nombreMarca) VALUES ('Lays');
