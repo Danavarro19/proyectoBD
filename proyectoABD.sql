@@ -178,13 +178,14 @@ INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('S
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Sorbete de Fresa',11,6,1.50,20);
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de chocolate',11,6,1.50,20);
 
-INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de Fresa',11,6,1,20);
-INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de chocolate',11,6,1,20);
-INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta napolitana',11,6,1,20);
-INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de vainilla',11,6,1,20);
-INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Sorbete de vainilla',11,6,1.5,20);
-INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Sorbete de Fresa',11,6,1.50,20);
-INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de chocolate',11,6,1.50,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Batidora descheable',6,7,3.25,30);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Juego de vajilla',11,7,5.85,30);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Centro de mesa',9,7,13.65,30);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Salero y pimentero',6,7,9.85,30);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Juego para el te',6,7,12.5,30);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Manteles',9,7,15.20,30);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Aderezos varios',11,7,10.50,30);
+
 
 
 insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (13, 6, 10);
