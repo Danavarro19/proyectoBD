@@ -78,3 +78,72 @@ ALTER TABLE prodxproveedor ADD PRIMARY KEY(pkfk_id_producto,pkfk_id_proveedor);
 -- Agregando llaves foraneas a la tabla que relaciona producto y venta
 ALTER TABLE prodxproveedor ADD CONSTRAINT fk_from_producto2 FOREIGN KEY (pkfk_id_producto) REFERENCES producto(id_producto);
 ALTER TABLE prodxproveedor ADD CONSTRAINT fk_from_proveedor FOREIGN KEY (pkfk_id_proveedor) REFERENCES proveedor(id_proveedor);
+
+INSERT INTO categoria(nombre) VALUES('Juguetes');
+INSERT INTO categoria(nombre) VALUES('Jardin');
+INSERT INTO categoria(nombre) VALUES('Ocio');
+INSERT INTO categoria(nombre) VALUES('Articulos Personales');
+INSERT INTO categoria(nombre) VALUES('Productos Congelados');
+INSERT INTO categoria(nombre) VALUES('Utiles escolares');
+INSERT INTO categoria(nombre) VALUES('Productos de cocina');
+INSERT INTO categoria(nombre) VALUES('Productos Decorativos');
+INSERT INTO categoria(nombre) VALUES('Herramientas');
+
+INSERT INTO marca(nombreMarca) VALUES ('Hershey');
+INSERT INTO marca(nombreMarca) VALUES ('Lays');
+INSERT INTO marca(nombreMarca) VALUES ('JS Gardens');
+INSERT INTO marca(nombreMArca) VALUES ('GardenHills');
+INSERT INTO marca(nombreMarca) VALUES('Brain Agility');
+INSERT INTO marca(nombreMarca) VALUES ('GrandmasKitchen');
+INSERT INTO marca(nombreMarca) VALUES ('Colgate');
+INSERT INTO marca(nombreMarca) VALUES ('Oral-B');
+INSERT INTO marca(nombreMarca) VALUES ('Moyu');
+INSERT INTO marca(nombreMarca) VALUES ('Sheng-shou');
+INSERT INTO marca(nombreMarca) VALUES ('Martin Congelados');
+INSERT INTO marca(nombreMarca) VALUES ('Scribe');
+INSERT INTO marca(nombreMarca) VALUES ('Stanley');
+
+INSERT INTO empleado(nombre,fecha_entrada,id_supervisor) VALUES ('Juan Martinez','2018-08-21',null);
+INSERT INTO empleado(nombre,fecha_entrada,id_supervisor) VALUES ('Raul Granados', '2017-12-20',1);
+INSERT INTO empleado(nombre,fecha_entrada,id_supervisor) VALUES ('Daniel Dominguez','2018-02-24',1);
+INSERT INTO empleado(nombre,fecha_entrada,id_supervisor) VALUES ('Astrid Guzman','2017-02-10',1);
+INSERT INTO empleado(nombre,fecha_entrada,id_supervisor) VALUES ('Jorge Miranda','2018-05-04',1);
+INSERT INTO empleado(nombre,fecha_entrada,id_supervisor) VALUES('Josue Gonzales','2018-05-20',1);
+
+INSERT INTO venta(fk_id_empleado) VALUES (2);
+INSERT INTO venta(fk_id_empleado) VALUES (3);
+INSERT INTO venta(fk_id_empleado) VALUES (1);
+INSERT INTO venta(fk_id_empleado) VALUES (6);
+INSERT INTO venta(fk_id_empleado) VALUES (5);
+INSERT INTO venta(fk_id_empleado) VALUES (2);
+INSERT INTO venta(fk_id_empleado) VALUES (3);
+INSERT INTO venta(fk_id_empleado) VALUES (4);
+INSERT INTO venta(fk_id_empleado) VALUES (2);
+
+
+
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Pistola de agua',8,1,2,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Cubo rubik 3x3',8,1,1,10);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Cubo Rubik4x4',8,1,1.75,5);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Cubo Rubik5x5',8,1,2.25,2);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Rompecabezas Sirenita',7,1,2,10);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Rompezabezas toy story',7,1,2,10);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Barbie',7,1,1.5,10);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Max-steel',7,1,2,10);
+
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Rastrillo Grande',3,2,5,5);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Rastrillo pequeno',3,2,1.25,10);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Pala pequena',3,2,1.25,10);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Pala Grande',3,2,5,10);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Abono',4,2,4,10);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Abono',3,2,4,10);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Manguera 6 metros',4,2,7,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Maceta pequena',4,2,2.5,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Maceta mediana',3,2,5,7);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Maceta grande',4,2,7,5);
+
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Sudoku',5,3,1,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Sopas de letras',5,3,1,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro colorear princesa',5,3,1,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro colorear carros',5,3,1,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('',5,3,1,15);
