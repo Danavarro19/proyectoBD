@@ -146,7 +146,24 @@ INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('S
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Sopas de letras',5,3,1,15);
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro colorear princesa',5,3,1,15);
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro colorear carros',5,3,1,15);
-INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('',5,3,1,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro de crucigramas',5,3,1,15);
+
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Cepillo de dientes',8,4,1,25);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paquete 2 cepillos de dientes',8,4,1.75,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Pasta dental pequenia',7,4,0.80,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Pasta dental pequenia',8,4,0.75,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('PAsta dental mediana',7,4,1.50,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Pasta dental grande',7,4,2.50,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Pasta dental pequenia',8,4,2.50,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Peine',8,4,1.75,10);
+
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de Fresa',11,6,1,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de chocolate',11,6,1,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta napolitana',11,6,1,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de vainilla',11,6,1,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Sorbete de vainilla',11,6,1.5,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Sorbete de Fresa',11,6,1.50,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de chocolate',11,6,1.50,20);
 
 --Creando procesos almacenados 
 
