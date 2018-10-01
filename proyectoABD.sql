@@ -105,6 +105,7 @@ INSERT INTO marca(nombreMarca) VALUES ('Sheng-shou');
 INSERT INTO marca(nombreMarca) VALUES ('Martin Congelados');
 INSERT INTO marca(nombreMarca) VALUES ('Scribe');
 INSERT INTO marca(nombreMarca) VALUES ('Stanley');
+INSERT INTO marca(nombreMarca) VALUES ('Head&Shouders');
 
 INSERT INTO empleado(nombre,fecha_entrada,id_supervisor) VALUES ('Juan Martinez','2018-08-21',null);
 INSERT INTO empleado(nombre,fecha_entrada,id_supervisor) VALUES ('Raul Granados', '2017-12-20',1);
