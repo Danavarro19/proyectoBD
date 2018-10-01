@@ -7,13 +7,13 @@ USE proyectoABD;
 --creando tabla proveedor
 CREATE TABLE proveedor(
 	id_proveedor SMALLINT PRIMARY KEY IDENTITY,
-	nombre VARCHAR(25) NOT NULL,
+	nombre VARCHAR(45) NOT NULL,
 );
 
 -- creando tabla empleado
 CREATE TABLE empleado(
 	id_empleado INT PRIMARY KEY IDENTITY,
-	nombre VARCHAR(25) NOT NULL,
+	nombre VARCHAR(45) NOT NULL,
 	fecha_entrada DATE NOT NULL,
 	id_supervisor INT NULL
 );
@@ -23,19 +23,19 @@ AlTER TABLE empleado ADD CONSTRAINT fk_supervidor FOREIGN KEY (id_supervisor) RE
 -- creando tabla catalogo categoria
 CREATE TABLE categoria(
 	id_categoria INT PRIMARY KEY IDENTITY,
-	nombre VARCHAR(25) NOT NULL
+	nombre VARCHAR(45) NOT NULL
 );
 
 -- creando tabla marca
 CREATE TABLE marca(
 	id_marca INT PRIMARY KEY IDENTITY,
-	nombreMarca VARCHAR(25) NOT NULL
+	nombreMarca VARCHAR(45) NOT NULL
 );
 
 -- creando tabla producto
 CREATE TABLE producto(
 	id_producto INT PRIMARY KEY IDENTITY,
-	nombre VARCHAR(40),
+	nombre VARCHAR(45),
 	fk_id_marca INT NOT NULL,
 	fk_id_categoria INT NOT NULL,
 	precio SMALLINT NOT NULL,
@@ -63,8 +63,8 @@ CREATE TABLE prodxventa(
 );
 
 -- Aregando llaves foraneas a la tabla relacion producto venta
-ALTER TABLE prodxventa ADD CONSTRAINT fk_from_productoFOREIGN KEY (pkfk_id_producto) REFERENCES producto(id_producto);
-ALTER TABLE prodxventa ADD CONSTRAINT fk_from_ventaFOREIGN KEY (pkfk_id_venta) REFERENCES venta(id_venta);
+ALTER TABLE prodxventa ADD CONSTRAINT fk_from_producto FOREIGN KEY (pkfk_id_producto) REFERENCES producto(id_producto);
+ALTER TABLE prodxventa ADD CONSTRAINT fk_from_venta FOREIGN KEY (pkfk_id_venta) REFERENCES venta(id_venta);
 
 -- Agregando llave primaria a la tabla relacion producto venta
 ALTER TABLE prodxventa ADD PRIMARY KEY (pkfk_id_producto,pkfk_id_venta);
@@ -161,6 +161,15 @@ INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('P
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Pasta dental pequenia',8,4,2.50,15);
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Peine',8,4,1.75,10);
 
+
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Carne congelada',10,5,10.23,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Chorizo congelado',11,5,5.35,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Salsa de frijoles congelada',11,5,10.45,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Helado de vainilla',10,5,1.75,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Jamon de pavo',11,5,2.5,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Jamon de pollo',11,5,4.50,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Jamon de pavo',9,5,11.50,20);
+
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de Fresa',11,6,1,20);
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de chocolate',11,6,1,20);
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta napolitana',11,6,1,20);
@@ -168,6 +177,43 @@ INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('P
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Sorbete de vainilla',11,6,1.5,20);
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Sorbete de Fresa',11,6,1.50,20);
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de chocolate',11,6,1.50,20);
+
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de Fresa',11,6,1,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de chocolate',11,6,1,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta napolitana',11,6,1,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de vainilla',11,6,1,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Sorbete de vainilla',11,6,1.5,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Sorbete de Fresa',11,6,1.50,20);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paleta de chocolate',11,6,1.50,20);
+
+
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (13, 6, 10);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (30, 4, 13);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (37, 7, 3);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (34, 3, 4);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (2, 1, 15);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (38, 1, 13);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (30, 9, 8);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (12, 9, 9);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (11, 1, 11);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (11, 4, 12);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (35, 4, 8);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (7, 6, 9);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (3, 3, 13);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (11, 9, 6);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (22, 2, 3);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (23, 5, 9);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (6, 3, 11);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (6, 8, 12);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (31, 6, 1);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (25, 2, 8);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (21, 4, 4);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (4, 1, 5);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (5, 8, 9);
+insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (17, 1, 3);
+
+
+SELECT * from categoria;
 
 --Creando procesos almacenados 
 
@@ -180,19 +226,21 @@ EXECUTE spEmpleados;
 
 CREATE PROCEDURE spTopVentas
 AS 
-SELECT TOP 5 
+SELECT TOP 3 
 e.nombre, e.fecha_entrada, count(v.id_venta) as 'numeroDeVentas' FROM
 empleado e JOIN venta v
 ON e.id_empleado = v.fk_id_empleado
 GROUP BY e.nombre, e.fecha_entrada
-ORDER BY numeroDeVentas ASC
+ORDER BY numeroDeVentas DESC
 GO
+
+EXECUTE spTopVentas;
 
 --Creando vistas
 CREATE VIEW vwVentaEmpleados AS
-SELECT * FROM 
-empleado JOIN venta
-ON empleado.id_empleado = venta.fk_id_empleado;
+SELECT e.id_empleado ,e.nombre, v.id_venta FROM 
+empleado e JOIN venta v
+ON e.id_empleado = v.fk_id_empleado;
 
 SELECT * FROM vwVentaEmpleados;
 
@@ -209,6 +257,8 @@ CREATE TABLE ventaAudit(
 	id_venta INT,
 	id_empleado INT,
 );
+
+--Creando triggers
 
 CREATE TRIGGER tgVenta
 ON venta
@@ -237,5 +287,3 @@ begin
 print 'no se puede borrar'
 rollback transaction 
 END
-
-
