@@ -182,3 +182,35 @@ ON pv.pkfk_id_producto = p.id_producto
 GROUP BY p.nombre, p.precio;
 
 SELECT * FROM vwProductosVendidos
+
+
+
+CREATE TRIGGER tgVenta
+ON venta
+for insert  
+AS 
+begin 
+INSERT INTO ventaAudit (id_venta, id_empleado)
+SELECT * FROM INSERTED 
+END
+
+
+CREATE TRIGGER tgVentaDelete
+ON venta 
+for delete 
+AS 
+begin 
+print 'no se puede borrar'
+rollback transaction 
+END 
+
+CREATE TRIGGER tgProducDelete
+ON producto 
+for delete 
+AS 
+begin 
+print 'no se puede borrar'
+rollback transaction 
+END
+
+
