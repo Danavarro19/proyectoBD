@@ -186,7 +186,13 @@ INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('J
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Manteles',9,7,15.20,30);
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Aderezos varios',11,7,10.50,30);
 
-
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('duende de jardin',13,8,3.25,40);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('alfombra de bienvenida',4,8,5.85,40);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('guente decorativa de jardin',4,7,3.65,40);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('luces de navidad',4,8,9.85,40);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('marco para fotografia',13,8,2.5,40);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('cortinas',13,8,5.20,40);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('tobogan para jardin',4,8,1.50,40);
 
 insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (13, 6, 10);
 insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (30, 4, 13);
