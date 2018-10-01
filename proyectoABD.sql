@@ -12,10 +12,13 @@ CREATE TABLE proveedor(
 
 -- creando tabla empleado
 CREATE TABLE empleado(
+	id_empleado INT PRIMARY KEY IDENTITY,
 	nombre VARCHAR(25) NOT NULL,
 	fecha_entrada DATE NOT NULL,
-	id_empleado INT PRIMARY KEY IDENTITY
+	id_supervisor INT NULL
 );
+
+AlTER TABLE empleado ADD CONSTRAINT fk_supervidor FOREIGN KEY (id_supervisor) REFERENCES empleado(id_empleado);
 
 -- creando tabla catalogo categoria
 CREATE TABLE categoria(
