@@ -38,7 +38,7 @@ CREATE TABLE producto(
 	nombre VARCHAR(45),
 	fk_id_marca INT NOT NULL,
 	fk_id_categoria INT NOT NULL,
-	precio SMALLINT NOT NULL,
+	precio FLOAT NOT NULL,
 	stock SMALLINT NOT NULL
 );
 
@@ -150,6 +150,11 @@ INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('S
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro colorear princesa',5,3,1,15);
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro colorear carros',5,3,1,15);
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro de crucigramas',5,3,1,15);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro de Harry Potter 1',5,3,1,30);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro de Harry Potter 2',5,3,1,30);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro de Harry Potter 3',5,3,1,30);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro de Harry Potter 4',5,3,1,30);
+INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Libro de Harry Potter 5',5,3,1,30);
 
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Cepillo de dientes',8,4,1,25);
 INSERT INTO producto(nombre,fk_id_marca,fk_id_categoria,precio,stock) VALUES ('Paquete 2 cepillos de dientes',8,4,1.75,15);
@@ -221,7 +226,7 @@ insert into prodxventa (pkfk_id_producto, pkfk_id_venta, cant) values (17, 1, 3)
 
 SELECT * from categoria;
 
---Creando procesos almacenados 
+--Creando procesos almacenados
 
 CREATE PROCEDURE spEmpleados
 AS
@@ -231,8 +236,8 @@ GO
 EXECUTE spEmpleados;
 
 CREATE PROCEDURE spTopVentas
-AS 
-SELECT TOP 3 
+AS
+SELECT TOP 3
 e.nombre, e.fecha_entrada, count(v.id_venta) as 'numeroDeVentas' FROM
 empleado e JOIN venta v
 ON e.id_empleado = v.fk_id_empleado
@@ -244,52 +249,50 @@ EXECUTE spTopVentas;
 
 --Creando vistas
 CREATE VIEW vwVentaEmpleados AS
-SELECT e.id_empleado ,e.nombre, v.id_venta FROM 
+SELECT e.id_empleado ,e.nombre, v.id_venta FROM
 empleado e JOIN venta v
 ON e.id_empleado = v.fk_id_empleado;
 
 SELECT * FROM vwVentaEmpleados;
 
 CREATE VIEW vwProductosVendidos AS
-SELECT p.nombre, p.precio, sum(pv.cant) as 'cantidadVendida' FROM 
+SELECT p.nombre, p.precio, sum(pv.cant) as 'cantidadVendida' FROM
 prodxventa pv JOIN producto p
 ON pv.pkfk_id_producto = p.id_producto
 GROUP BY p.nombre, p.precio;
 
 SELECT * FROM vwProductosVendidos
 
---tablas de auditoria 
+--tablas de auditoria
 CREATE TABLE ventaAudit(
 	id_venta INT,
 	id_empleado INT,
 );
 
 --Creando triggers
-
 CREATE TRIGGER tgVenta
 ON venta
-for insert  
-AS 
-begin 
+for insert
+AS
+begin
 INSERT INTO ventaAudit (id_venta, id_empleado)
-SELECT * FROM INSERTED 
+SELECT * FROM INSERTED
 END
 
-
 CREATE TRIGGER tgVentaDelete
-ON venta 
-for delete 
-AS 
-begin 
+ON venta
+for delete
+AS
+begin
 print 'no se puede borrar'
-rollback transaction 
-END 
+rollback transaction
+END
 
 CREATE TRIGGER tgProducDelete
-ON producto 
-for delete 
-AS 
-begin 
+ON producto
+for delete
+AS
+begin
 print 'no se puede borrar'
-rollback transaction 
+rollback transaction
 END
