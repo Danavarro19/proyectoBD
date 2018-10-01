@@ -183,7 +183,11 @@ GROUP BY p.nombre, p.precio;
 
 SELECT * FROM vwProductosVendidos
 
-
+--tablas de auditoria 
+CREATE TABLE ventaAudit(
+	id_venta INT,
+	id_empleado INT,
+);
 
 CREATE TRIGGER tgVenta
 ON venta
