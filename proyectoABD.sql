@@ -35,7 +35,7 @@ CREATE TABLE marca(
 -- creando tabla producto
 CREATE TABLE producto(
 	id_producto INT PRIMARY KEY IDENTITY,
-	nombre VARCHAR(25),
+	nombre VARCHAR(40),
 	fk_id_marca INT NOT NULL,
 	fk_id_categoria INT NOT NULL,
 	precio SMALLINT NOT NULL,
