@@ -26,24 +26,32 @@ CREATE TABLE categoria(
 	nombre VARCHAR(45) NOT NULL
 );
 
+CREATE TABLE subcategoria(
+    id_subcategoria INT PRIMARY KEY, --usar secuencia aqui
+    fk_id_categoria INT NOT NULL,
+    nombre VARCHAR(45) NOT NULL
+);
+
+ALTER TABLE subcategoria ADD CONSTRAINT fk_from_categoria FOREIGN KEY (fk_id_categoria) REFERENCES categoria(id_categoria);
+
+
 -- creando tabla marca
 CREATE TABLE marca(
 	id_marca INT PRIMARY KEY IDENTITY,
 	nombreMarca VARCHAR(45) NOT NULL
 );
 
--- creando tabla producto
 CREATE TABLE producto(
-	id_producto INT PRIMARY KEY IDENTITY,
+	id_producto INT PRIMARY KEY,
 	nombre VARCHAR(45),
 	fk_id_marca INT NOT NULL,
-	fk_id_categoria INT NOT NULL,
+	fk_id_subcategoria INT NOT NULL,
 	precio FLOAT NOT NULL,
-	stock SMALLINT NOT NULL
+	stock SMALLINT NOT NULL,
+    fechaExpiracion DATE
 );
 
---Agregando llaves foraneas a tabla producto
-ALTER TABLE producto ADD CONSTRAINT fk_from_categoria FOREIGN KEY (fk_id_categoria) REFERENCES categoria(id_categoria);
+ALTER TABLE producto ADD CONSTRAINT fk_from_subcategoria FOREIGN KEY (fk_id_subcategoria) REFERENCES subcategoria(id_subcategoria);
 ALTER TABLE producto ADD CONSTRAINT fk_from_marca FOREIGN KEY (fk_id_marca) REFERENCES marca(id_marca);
 
 -- creando tabla venta
